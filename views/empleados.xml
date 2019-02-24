@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="nominas_empleados_action" name="EMPLEADOS"
+                    res_model="nominas.empleados"/>
+
+        <record id="nominas_empleados_view_tree" model="ir.ui.view">
+            <field name="name">Lista empleados</field>
+            <field name="model">nominas.empleados</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="dni"/>
+                    <field name="foto" widget='image'/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="cargo"/>
+                    <field name="plus"/>
+                    <field name="sexo"/>
+                    <field name="domicilio"/>
+                    <field name="totalnomina"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nominas_empleados_view_search" model="ir.ui.view">
+            <field name="name">Busqueda empleados</field>
+            <field name="model">nominas.empleados</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni"/>
+                    <field name="foto" widget='image'/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="cargo"/>
+                    <field name="plus"/>
+                    <field name="sexo"/>
+                    <field name="domicilio"/>
+                    <field name="totalnomina"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Nominas" id="nominas_empleados" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="nominas_empleados" sequence="10"/>
+        <menuitem name="Empleados" id="empleados" action="nominas_empleados_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

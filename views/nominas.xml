@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="nominas_nominas_action" name="NOMINAS"
+                    res_model="nominas.nominas"/>
+
+        <record id="nominas_nominas_view_tree" model="ir.ui.view">
+            <field name="name">Lista nóminas</field>
+            <field name="model">nominas.nominas</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="dias"/>
+                    <field name="empleado"/>
+                    <field name="nominaorigen"/>
+                    <field name="nominatotal"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="nominas_nominas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda nóminas</field>
+            <field name="model">nominas.nominas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dias"/>
+                    <field name="empleado"/>
+                    <field name="nominaorigen"/>
+                    <field name="nominatotal"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Nominas" id="nominas_nominas" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="nominas_nominas" sequence="10"/>
+        <menuitem name="Nóminas" id="nominas" action="nominas_nominas_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

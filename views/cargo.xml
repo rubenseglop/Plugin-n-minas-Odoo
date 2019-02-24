@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="nominas_cargo_action" name="CARGO"
+                    res_model="nominas.cargo"/>
+
+        <record id="nominas_cargo_view_tree" model="ir.ui.view">
+            <field name="name">Lista cargos</field>
+            <field name="model">nominas.cargo</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="nombrecargo"/>
+                    <field name="salariobase"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nominas_cargo_view_search" model="ir.ui.view">
+            <field name="name">Busqueda cargos</field>
+            <field name="model">nominas.cargo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombrecargo"/>
+                    <field name="salariobase"/>
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Nominas" id="nominas_cargo" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="nominas_cargo" sequence="5"/>
+        <menuitem name="Subtipos" id="subtipos" action="nominas_cargo_action" parent="menu_inicio"
+                  sequence="10"/>
+        <menuitem name="Cargo" id="cargo" action="nominas_cargo_action" parent="subtipos"
+                  sequence="10"/>
+
+
+
+    </data>
+</odoo>
